@@ -34,9 +34,9 @@ class content{
 			];
 		}
 		$preg = '/tbs.*?"(.*?)".*?}.*?PageData.forum.*?id.*?:.*?([0-9]*),/s';
-        preg_match($preg, $data, $info);
-        $array['tbs'] = $info[1];
-        $array['fid'] = $info[2];
+		preg_match($preg, $data, $info);
+		$array['tbs'] = $info[1];
+		$array['fid'] = $info[2];
 		return $array;
 	}
 
