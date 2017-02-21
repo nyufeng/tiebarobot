@@ -4,6 +4,7 @@ $config['bduss'] = ''; //bduss 贴吧Cookie
 $config['ID'] = ''; //百度ID 用于辨识,无实际作用
 $config['redis_ip'] = '127.0.0.1'; //redis IP
 $config['redis_port'] = '6379'; //redis 端口
+$config['is_post'] = true; //是否处理回复内容
 $rule['author'] = [ //例外的用户ID
 ];
 $rule['title_must'] = [ //标题中必须含有
