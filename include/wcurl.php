@@ -29,7 +29,8 @@ class wcurl {
         $this->setHeader($head)->setAll(array( //wcurl默认设定
                                     CURLOPT_RETURNTRANSFER  => true, //将curl获取的信息以文件流的形式返回，而不是直接输出
                                     CURLOPT_SSL_VERIFYPEER  => false, //cURL将终止从服务端进行验证
-                                    CURLOPT_FOLLOWLOCATION  => true //跟随重定向 会将服务器服务器返回的"Location: "放在header中递归的返回给服务器
+                                    CURLOPT_FOLLOWLOCATION  => true, //跟随重定向 会将服务器服务器返回的"Location: "放在header中递归的返回给服务器
+
         ));
     }
 
@@ -149,8 +150,8 @@ class wcurl {
      * @param string $opt 要获取的信息，参见 http://cn2.php.net/manual/zh/function.curl-getinfo.php
      * @return string 信息
      */
-    public function getInfo($opt) {
-        return curl_getinfo($this->conn, $opt);
+    public function getInfo() {
+        return curl_getinfo($this->conn);
     }
 
     /**
@@ -202,7 +203,8 @@ class wcurl {
      * @return string 抓取结果
      */
     public static function xget($url) {
-        $fuckoldphp = new self($url);
+        $fuckoldphp = new self();
+        $fuckoldphp->setUrl($url);
         return $fuckoldphp->exec();
     }
 
