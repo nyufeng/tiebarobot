@@ -10,7 +10,7 @@ foreach($indexlist['list'] as $v){
         continue;
     }
 	$status = false;
-	if(in_array($v['author'],$rule['author']) || $cache->is_process_first($v['info']['id'])){
+	if(in_array($v['author'],$rule['author']) || $cache->is_process_first($v['info']['id']) || $v['author'] != $v['info']['author_name']){
 		$status = true;
 		goto del;
 	}
