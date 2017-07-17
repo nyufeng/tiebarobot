@@ -29,6 +29,7 @@ class wcurl {
         $this->setHeader($head)->setAll(array( //wcurl默认设定
                                     CURLOPT_RETURNTRANSFER  => true, //将curl获取的信息以文件流的形式返回，而不是直接输出
                                     CURLOPT_SSL_VERIFYPEER  => false, //cURL将终止从服务端进行验证
+                                    CURLOPT_SSL_VERIFYHOST  => false,
                                     CURLOPT_FOLLOWLOCATION  => true, //跟随重定向 会将服务器服务器返回的"Location: "放在header中递归的返回给服务器
 
         ));
