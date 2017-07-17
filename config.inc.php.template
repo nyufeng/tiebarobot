@@ -1,0 +1,17 @@
+<?php
+$config['tieba'] = '中国'; //贴吧名,不带“吧”
+$config['bduss'] = 'BAIDUID=ADB7F687209FWD6B4AA8F639DD24F5A:FG=1; BIDUPSID=ADB7F68720929FED6EAA8F69DD24F5A; PSTM=1493384580; TIEBA_USERTYPE=2da17e7c1597b07ea68cfcf7; TIEBAUID=91d9d8a2f23faa17b627ff82; __cfduid=def3e3aa0c9fa47ce72a0d100c7d8cb071494826460; BDUSS=X5IbngxaUpieWlSeFpFaH5lTkU0aFVmUHU5Rn40bmZXYzY3bmxLUHdZWUd5MEJaSVFBQUFBJCQAAAAAAAAAAAEAAACMQ9woU00xNDU2NTQxNgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAY-GVkGPhlZT; bdshare_firstime=1494848829157; MCITY=-233%3A; STOKEN=2aa6958bb54122be16c68e04e6e18266726fc5ac45b83f51bdf645f6d4565e54; uc_login_unique=ddedfc6d733c73c16119422d29b4cb2b; fixed_bar=1; FP_LASTTIME=1499083271447; bottleBubble=1; 685523852_FRSVideoUploadTip=1; wise_device=0; BDRCVFR[feWj1Vr5u3D]=I67x6TjHwwYf0; PSINO=1; H_PS_PSSID=1430_21091_17001_23632_20929'; //bduss 贴吧Cookie
+$config['ID'] = '首都网警'; //百度ID 用于辨识,无实际作用
+$config['redis_ip'] = '127.0.0.1'; //redis IP
+$config['redis_port'] = '6379'; //redis 端口
+$config['is_post'] = false; //是否处理回复内容
+$rule['author'] = [ //例外的用户ID
+    '首都网警',
+];
+$rule['title_must'] = [ //标题中必须含有
+    '[平安北京]',
+];
+$rule['content_not_have'] = [ //内容中不能有
+    'm.baidu.com',
+];
+//file-end
