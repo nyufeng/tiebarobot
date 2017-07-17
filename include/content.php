@@ -14,7 +14,7 @@ class content{
         ];
         $httpbuild = http_build_query($option);
         $this->wcurl->setUrl('http://tieba.baidu.com/f?' . $httpbuild);
-	    $this->wcurl->addcookie('BDUSS='.$bduss);
+	    $this->wcurl->addcookie($bduss);
 	    return $this->wcurl->get();
 	}
 
@@ -55,7 +55,7 @@ class content{
             'tid'  =>  $tid,
         ];
         $this->wcurl->setUrl('http://tieba.baidu.com/f/commit/thread/delete');
-        $this->wcurl->addcookie('BDUSS='.$bduss);
+        $this->wcurl->addcookie($bduss);
         $res = $this->wcurl->post($option);
 	}
 
@@ -72,7 +72,7 @@ class content{
             'is_finf' => 'false',
         ];
         $this->wcurl->setUrl('http://tieba.baidu.com/f/commit/post/delete');
-        $this->wcurl->addcookie('BDUSS='.$bduss);
+        $this->wcurl->addcookie($bduss);
         $res = $this->wcurl->post($option);
 	}
 
