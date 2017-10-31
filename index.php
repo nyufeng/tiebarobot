@@ -9,11 +9,11 @@ foreach($indexlist['list'] as $v){
     if($cache->is_process($v['info']['id'],$v['lastpost'])){
         continue;
     }
-	$status = false;
-	if(in_array($v['author'],$rule['author']) || $cache->is_process_first($v['info']['id']) || $v['author'] != $v['info']['author_name']){
+    $status = false;
+	if(in_array($v['info']['author_name'],$rule['author']) || $cache->is_process_first($v['info']['id'])) {
 		$status = true;
 		goto del;
-	}
+    }
 	if(empty($rule['title_must'])){
 		$status = true;
 	}else{
@@ -36,7 +36,7 @@ foreach($indexlist['list'] as $v){
 	del:
 	if($status === false){
 		$content->delTiebaList($indexlist['tbs'],(string)$v['info']['id'],$indexlist['fid'],$config['tieba'],$config['bduss']);
-		echo "title:\t{$v['title']}\t\tauthor:\t{$v['author']}\t\tpost_id:\t{$v['info']['first_post_id']}\t\tconn:\t{$v['conn']}\r\n";
+		echo "title:\t{$v['title']}\t\tauthor:\t{$v['info']['author_name']}\t\tpost_id:\t{$v['info']['first_post_id']}\t\tconn:\t{$v['conn']}\r\n";
 	}else{
 		$cache->add_process_first($v['info']['id'],$v['info']['first_post_id']);
 	}
